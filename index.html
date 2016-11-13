@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Hello World</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
@@ -13,8 +14,14 @@
         // typescript config
         System.config({
             transpiler: 'typescript',
-            typescriptOptions: { emitDecoratorMetadata: true },
-            packages: {'app': {defaultExtension: 'ts'}}
+            typescriptOptions: {
+                emitDecoratorMetadata: true
+            },
+            packages: {
+                'app': {
+                    defaultExtension: 'ts'
+                }
+            }
         });
 
         // environment component
@@ -22,11 +29,18 @@
         //     .then(null, console.error.bind(console));
 
         // hello world component
-        System.import('/app/hello_world_main')
-              .then(null, console.error.bind(console));
+        // System.import('/app/hello_world_main')
+        //     .then(null, console.error.bind(console));
+
+        // modules
+        System.import('/app/modules_main')
+            .then(null, console.error.bind(console));
     </script>
-  </head>
+
+</head>
+
 <body>
-   <my-app>Loading...</my-app>
+    <my-app>Loading...</my-app>
 </body>
+
 </html>
